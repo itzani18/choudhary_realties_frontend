@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/",// adjust if you deploy to other base url
+  baseURL: "https://choudhary-realties-backend.onrender.com/api/",// adjust if you deploy to other base url
   headers: { "Accept": "application/json" },
 });
 
