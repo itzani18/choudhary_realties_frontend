@@ -10,24 +10,25 @@ export const api = axios.create({
 api.interceptors.request.use(config => {
   const token = localStorage.getItem("admin_token");
 
-  // PUBLIC GET endpoints (no token required)
-  const publicGET = [
+  // PUBLIC ENDPOINTS (GET + POST both allowed)
+  const publicEndpoints = [
     "properties/",
     "properties",
     "inquiries/",
     "inquiries",
   ];
 
-  // If GET + public endpoint → don't attach token
-  if (config.method === "get" && publicGET.some(ep => config.url.includes(ep))) {
+  // If endpoint is PUBLIC → do NOT attach token
+  if (publicEndpoints.some(ep => config.url.includes(ep))) {
     return config;
   }
 
-  // For POST/PUT/DELETE → ALWAYS attach admin token
+  // Admin endpoints → attach token
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
   return config;
 });
+
 
