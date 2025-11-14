@@ -1,0 +1,283 @@
+/* =========================
+   Modern Clean Real Estate
+   Global theme / tokens
+   Replace styles.css with this
+   ========================= */
+
+/* ---------- Fonts ----------
+   Use Poppins for headings, Inter for body.
+   Add this to public/index.html (head):
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+*/
+
+:root{
+  /* color tokens */
+  --color-bg: #f8fafc;           /* page background */
+  --color-surface: #ffffff;      /* cards, surfaces */
+  --color-primary: #0d6efd;      /* bootstrap-like blue */
+  --color-primary-600: #0b5ed7;
+  --color-accent: #17a2b8;       /* teal accent for highlights */
+  --color-muted: #6c757d; 
+  --color-heading: #0b2a4a;      /* deep navy for headings */
+  --color-danger: #dc3545;
+
+  /* neutrals */
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+
+  /* layout tokens */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 4px 14px rgba(13, 37, 63, 0.06);
+  --shadow-md: 0 10px 30px rgba(13, 37, 63, 0.08);
+
+  --container-max: 1200px;
+  --nav-height: 76px; /* used for body padding */
+}
+
+/* ---------- Base ----------
+*/
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--color-bg);
+  color:var(--color-heading);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-top: calc(var(--nav-height) + 14px); /* prevents fixed-top overlap */
+}
+
+/* container */
+.container{
+  width:100%;
+  max-width:var(--container-max);
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:18px;
+  padding-right:18px;
+}
+
+/* headings */
+h1,h2,h3,h4,h5{font-family:"Poppins", "Inter", sans-serif; color:var(--color-heading); margin:0 0 .6rem 0}
+h1{font-size:2.1rem; font-weight:700}
+h2{font-size:1.6rem; font-weight:700}
+h3{font-size:1.25rem; font-weight:600}
+
+/* paragraphs */
+p{margin:0 0 .9rem 0; color:#475569}
+
+/* links */
+a{color:var(--color-primary); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- Buttons ----------
+*/
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.56rem .9rem;
+  border-radius:10px;
+  font-weight:600;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .14s ease, box-shadow .14s ease;
+}
+
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:var(--color-primary);
+  color:white;
+  box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover{background:var(--color-primary-600)}
+
+.btn-outline{
+  background:transparent;
+  color:var(--color-primary);
+  border:1px solid rgba(13,110,253,0.12);
+}
+
+/* small buttons */
+.btn-sm{padding:.35rem .6rem; font-size:.9rem; border-radius:8px}
+
+/* ---------- Card ----------
+*/
+.card{
+  background:var(--color-surface);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+
+/* subtle utilities */
+/* DO NOT OVERRIDE BOOTSTRAP ROW */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col{flex:1}
+.center{display:flex; align-items:center; justify-content:center}
+
+/* ---------- Navbar adjustments (works with our NAVBAR component) ----------
+*/
+.navbar{
+  height:var(--nav-height);
+  display:flex;
+  align-items:center;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(6px);
+  box-shadow:0 6px 20px rgba(12,32,63,0.06);
+  padding-left:18px;
+  padding-right:18px;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
+}
+
+/* brand */
+.brand{
+  font-family:"Poppins", sans-serif;
+  font-weight:700;
+  color:var(--color-heading);
+}
+.brand .muted{color:var(--color-primary)}
+
+/* navbar links */
+.navbar-nav{display:flex; gap:12px; align-items:center; margin-left:auto}
+.nav-link{padding:.45rem .7rem; color:var(--color-heading); border-radius:8px}
+.nav-link:hover{background:var(--gray-100); color:var(--color-primary)}
+
+/* active */
+.nav-link.active{
+  color:var(--color-primary);
+  background:linear-gradient(90deg, rgba(13,110,253,0.06), rgba(23,162,184,0.02));
+  border-radius:8px;
+}
+
+/* ---------- Hero / Landing ----------
+*/
+.hero{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  padding:48px 0;
+}
+.hero-left{flex:1}
+.hero-right{flex:1; display:flex; justify-content:center; align-items:center}
+
+/* hero card */
+.hero-card{
+  background:linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius:16px;
+  padding:28px;
+  box-shadow:var(--shadow-md);
+}
+
+/* search bar */
+.search-bar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:18px;
+}
+.search-bar input, .search-bar select{
+  padding:.7rem .9rem;
+  border-radius:10px;
+  border:1px solid var(--gray-200);
+  background:white;
+}
+
+/* CTA */
+.cta{
+  margin-top:16px;
+}
+
+/* ---------- Property card (global) ----------
+   Card styles used in PropertyCard.jsx
+*/
+.property-card{
+  border-radius:12px;
+  overflow:hidden;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease;
+}
+.property-card:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-md);
+}
+
+.property-img{width:100%; height:220px; object-fit:cover; display:block}
+
+/* meta row */
+.meta-row{display:flex; gap:12px; align-items:center; color:var(--color-muted); font-size:0.95rem}
+
+/* badges */
+.badge{
+  display:inline-block;
+  padding:.35rem .55rem;
+  border-radius:8px;
+  font-weight:600;
+  font-size:.78rem;
+}
+
+/* sold badge */
+.badge-sold{background:var(--color-danger); color:white}
+
+/* ---------- Forms ----------
+*/
+.form-control{
+  display:block;
+  width:100%;
+  padding:.66rem .85rem;
+  border-radius:10px;
+  border:1px solid var(--gray-200);
+  background:white;
+  outline:none;
+}
+.form-control:focus{box-shadow:0 6px 20px rgba(13,110,253,0.06); border-color:var(--color-primary)}
+
+/* ---------- Footer ----------
+*/
+footer{padding:40px 0 28px; color:#475569}
+
+/* ---------- Utilities ----------
+*/
+.text-muted{color:var(--color-muted)}
+.mb-1{margin-bottom:.25rem}
+.mb-2{margin-bottom:.5rem}
+.mb-3{margin-bottom:.9rem}
+.mt-1{margin-top:.25rem}
+.mt-2{margin-top:.6rem}
+.p-3{padding:1rem}
+.rounded{border-radius:10px}
+
+/* Contact hero fullscreen style */
+.contact-hero { background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(23,162,184,0.02)); padding: 48px 0; }
+.contact-hero-overlay { padding: 28px 0; }
+.hero-inner { display:flex; gap:32px; align-items:center; }
+.hero-left { flex:1; max-width:640px; }
+.hero-right { flex:1; max-width:520px; }
+
+/* card + modal */
+.modal-backdrop { background: rgba(2,6,23,0.45); }
+.card { border-radius: 12px; }
+
+/* ---------- Responsive ----------
+*/
+@media (max-width: 992px){
+  .hero{flex-direction:column}
+  body{padding-top:calc(var(--nav-height) + 18px)}
+  .property-img{height:180px}
+  .container{padding-left:14px; padding-right:14px}
+}
+

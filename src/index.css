@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-link {
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+  transform: translateY(-1px);
+}
+
+.navbar {
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background: rgba(255,255,255,0.95);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+.footer-dark {
+  background: #0d0d0d;
+}
+
+.footer-link {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #0d6efd !important;
+}
+
+.footer-dark .btn {
+  transition: 0.3s ease;
+}
+
+.footer-dark .btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+.property-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.15) !important;
+}
+
+.property-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.07);
+}
