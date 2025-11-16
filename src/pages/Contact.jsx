@@ -115,7 +115,7 @@ export default function Contact() {
             {/* OFFICE PHOTO */}
             <div style={{ height: 380 }}>
               <img
-                src="YOUR_OFFICE_IMAGE_URL_HERE"
+                src="https://drive.google.com/file/d/1_YfKDLeZvp8GL2ZnPvg_sJMoJwiMiDBt/view?usp=sharing"
                 className="w-100 h-100"
                 style={{ objectFit: "cover" }}
                 alt="office"
