@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { api } from "../api";
+import officePic from "./office.avif";
 
 export default function Contact() {
 
@@ -115,7 +116,7 @@ export default function Contact() {
             {/* OFFICE PHOTO */}
             <div style={{ height: 380 }}>
               <img
-                src="https://drive.google.com/file/d/1_YfKDLeZvp8GL2ZnPvg_sJMoJwiMiDBt/view?usp=sharing"
+                src={officePic}
                 className="w-100 h-100"
                 style={{ objectFit: "cover" }}
                 alt="office"
