@@ -18,28 +18,27 @@ export default function UploadPropertyImages() {
 
   async function upload() {
     if (images.length === 0) return alert("Select images first");
-
+  
     setLoading(true);
-
+  
     const formData = new FormData();
     formData.append("property", id);
     images.forEach(file => formData.append("images", file));
-
+  
     try {
-      await api.post("property-images/", formData, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
-
+      await api.post("property-images/", formData);  // TOKEN WILL BE ATTACHED
+  
       alert("Images uploaded successfully!");
       nav("/admin/dashboard");
-
+  
     } catch (err) {
       console.error(err);
       alert("Failed to upload images");
     }
-
+  
     setLoading(false);
   }
+
 
   return (
     <div className="container mt-4" style={{ maxWidth: 700 }}>
