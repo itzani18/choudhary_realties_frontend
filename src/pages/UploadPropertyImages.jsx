@@ -27,7 +27,9 @@ export default function UploadPropertyImages() {
   
     try {
       await api.post("property-images/", formData);  // TOKEN WILL BE ATTACHED
-  
+      console.log("UPLOADING WITH PROPERTY ID:", id);
+      console.log("TOKEN:", localStorage.getItem("admin_token"));
+
       alert("Images uploaded successfully!");
       nav("/admin/dashboard");
   
